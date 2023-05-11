@@ -1,0 +1,253 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+}
+
+body {
+  margin: 0;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+input {
+  font-size: 16px;
+}
+
+input::-webkit-input-placeholder {
+  color: #bfbfbf;
+}
+
+input::-ms-input-placeholder {
+  color: #bfbfbf;
+}
+
+input::-moz-placeholder {
+  color: #bfbfbf;
+}
+
+input::placeholder {
+  color: #bfbfbf;
+}
+
+.container {
+  max-width: 1623px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+#app {
+  padding: 3rem 0;
+}
+
+.cf-title {
+  display: flex;
+  column-gap: 15px;
+  align-items: center;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 48px;
+  margin-bottom: 30px;
+}
+
+.cf-title img {
+  max-width: 48px;
+}
+
+.cf-table thead th {
+  text-align: left;
+}
+
+.cf-table__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.cf-table__top .dataTables_filter {
+  float: none;
+  text-align: left;
+}
+
+.cf-table__top .dataTables_filter label {
+  position: relative;
+  display: block;
+  font-size: 0;
+}
+.cf-table__top .dataTables_filter label::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 15px;
+  width: 18px;
+  height: 18px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("./images/icon-search.svg");
+}
+.cf-table__top .dataTables_filter input {
+  height: 48px;
+  width: 315px;
+  border-radius: 8px;
+  border: 0;
+  box-shadow: 0;
+  outline: 0;
+  background-color: #f8f9fa;
+  padding: 15px 20px 15px 48px;
+}
+
+.cf-options {
+  display: flex;
+  column-gap: 25px;
+  color: #bfbfbf;
+}
+
+.cf-options__list,
+.cf-options__grid {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.cf-options__list.active,
+.cf-options__grid.active {
+  color: #2271b1;
+}
+
+.cf-table-grid {
+  display: block;
+}
+
+table.cf-table {
+  margin-bottom: 50px;
+}
+
+table.cf-table.no-footer,
+table.cf-table thead th {
+  border-bottom: 2px solid #f8f9fa;
+}
+table.cf-table-grid.no-footer {
+  border-bottom: 0;
+}
+
+.cf-table-grid thead {
+  display: none;
+}
+
+.cf-table-grid tbody {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.cf-table-grid tbody tr {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border: 2px solid #eef2f5;
+  border-radius: 20px;
+  padding: 25px;
+}
+
+.cf-table__bottom {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  column-gap: 20px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.cf-table__bottom .dataTables_info,
+.cf-table__bottom .dataTables_paginate {
+  padding-top: 0;
+}
+
+.cf-table__bottom .dataTables_paginate {
+  display: flex;
+}
+
+.cf-table__bottom .dataTables_paginate span {
+  display: none;
+}
+
+.cf-table__bottom .dataTables_paginate .paginate_button,
+.cf-table__bottom .dataTables_paginate .paginate_button.disabled {
+  min-width: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 39px;
+  height: 35px;
+  border: 1px solid #c4c4c4;
+  margin: 0;
+  padding: 0;
+}
+
+.cf-table__bottom .dataTables_paginate .paginate_button:hover {
+  border-color: #2271b1;
+  background: transparent;
+  color: #2271b1 !important;
+}
+
+.cf-table__bottom .dataTables_paginate .paginate_button.disabled:hover {
+  border-color: #c4c4c4;
+  opacity: 0.4;
+}
+
+.cf-table__bottom .dataTables_paginate .paginate_button.previous {
+  border-radius: 4px 0px 0px 4px;
+}
+
+.cf-table__bottom .dataTables_paginate .paginate_button.next {
+  border-radius: 0px 4px 4px 0px;
+}
