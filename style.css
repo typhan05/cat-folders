@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Poppins, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -16,15 +16,6 @@ body {
   line-height: 1.5;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 h1,
 h2,
 h3,
@@ -38,53 +29,63 @@ body {
   margin: 0;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-input {
-  font-size: 16px;
-}
-
-input::-webkit-input-placeholder {
-  color: #bfbfbf;
-}
-
-input::-ms-input-placeholder {
-  color: #bfbfbf;
-}
-
-input::-moz-placeholder {
-  color: #bfbfbf;
-}
-
-input::placeholder {
-  color: #bfbfbf;
+#app {
+  padding: 3rem 0;
 }
 
 .container {
   max-width: 1623px;
   margin: 0 auto;
   width: 100%;
+  color: #1e1e1e;
 }
 
-#app {
-  padding: 3rem 0;
+.cf-app input {
+  font-size: 16px;
+}
+
+.cf-app a {
+  text-decoration: none;
+}
+
+.cf-app input::-webkit-input-placeholder {
+  color: #bfbfbf;
+}
+
+.cf-app input::-ms-input-placeholder {
+  color: #bfbfbf;
+}
+
+.cf-app input::-moz-placeholder {
+  color: #bfbfbf;
+}
+
+.cf-app input::placeholder {
+  color: #bfbfbf;
+}
+
+.cf-app .btn-download {
+  display: inline-flex;
+  align-items: center;
+  border: 1.5px solid #bfbfbf;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  border-radius: 8px;
+  color: #212529;
+  padding: 12px 18px;
+  column-gap: 10px;
+  transition-duration: 0.3s;
+}
+
+.cf-app .btn-download svg {
+  color: #bfbfbf;
+}
+
+.cf-app .btn-download:hover,
+.cf-app .btn-download:hover svg {
+  border-color: #2271b1;
+  color: #2271b1;
 }
 
 .cf-title {
@@ -170,12 +171,158 @@ table.cf-table {
   margin-bottom: 50px;
 }
 
-table.cf-table.no-footer,
-table.cf-table thead th {
+table.cf-table th.sorting {
+  background-image: none !important;
+}
+
+table.cf-table th:first-child {
+  width: 50%;
+}
+
+table.cf-table th:last-child {
+  width: 10%;
+}
+
+table.cf-table th.sorting span {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 7px;
+}
+
+table.cf-table th.sorting span::after {
+  content: "";
+  background-image: url("./images/icon-sort.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 8px;
+  height: 16px;
+}
+
+table.cf-table th.sorting_asc span::after {
+  background-image: url("./images/icon-sort-up.svg");
+}
+
+table.cf-table th.sorting_desc span::after {
+  background-image: url("./images/icon-sort-down.svg");
+}
+
+table.cf-table th span {
+  font-weight: 600;
+}
+
+table.cf-table tr {
+  position: relative;
+}
+
+table.cf-table th:first-child,
+table.cf-table td:first-child {
+  text-align: left;
+}
+
+table.cf-table th,
+table.cf-table td {
+  text-align: center;
+}
+
+table.cf-table tbody tr.prev-hover td,
+table.cf-table tbody tr:hover td {
+  border-color: transparent;
+}
+
+table.cf-table tbody tr:hover td {
+  background-color: #f4f7ff;
+}
+
+table.cf-table tr:hover td:first-child {
+  border-radius: 8px 0 0 8px;
+}
+
+table.cf-table tr:hover td:last-child {
+  border-radius: 0 8px 8px 0;
+}
+
+table.cf-table tbody tr:first-child td {
+  border-top: 2px solid #f8f9fa;
+}
+
+table.cf-table tbody td {
   border-bottom: 2px solid #f8f9fa;
 }
-table.cf-table-grid.no-footer {
+
+table.cf-table .cf-updated {
+  display: none;
+}
+
+table.cf-table-grid tbody tr:first-child td {
+  border-top: 0;
+}
+table.cf-table thead th,
+table.cf-table.no-footer,
+table.cf-table-grid tbody td {
   border-bottom: 0;
+}
+
+table.cf-table-grid td:first-child {
+  text-align: center;
+}
+
+table.cf-table-grid .cf-icon {
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+table.cf-table-grid .cf-icon::before {
+  width: 85px;
+  height: 110px;
+  margin-bottom: 10px;
+}
+
+table.cf-table-grid tbody td {
+  padding: 0;
+}
+
+table.cf-table-grid td:nth-child(2),
+table.cf-table-grid td:nth-child(4) {
+  display: none;
+}
+
+table.cf-table-grid td:nth-child(3) {
+  color: #757575;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+table.cf-table-grid td:last-child {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  border-top: 2px solid #f8f9fa;
+  padding-top: 20px;
+  margin-top: 45px;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+table.cf-table-grid tr:hover {
+  background-color: #f4f7ff;
+}
+
+table.cf-table-grid tr:hover td:last-child {
+  border-color: #ffffff;
+}
+
+table.cf-table-grid td:last-child small {
+  color: #757575;
+  display: block;
+  letter-spacing: 0.03em;
+}
+
+table.cf-table-grid .cf-updated {
+  display: block;
+  text-align: left;
 }
 
 .cf-table-grid thead {
@@ -194,7 +341,7 @@ table.cf-table-grid.no-footer {
   background: #ffffff;
   border: 2px solid #eef2f5;
   border-radius: 20px;
-  padding: 25px;
+  padding: 40px 25px 25px;
 }
 
 .cf-table__bottom {
@@ -250,4 +397,66 @@ table.cf-table-grid.no-footer {
 
 .cf-table__bottom .dataTables_paginate .paginate_button.next {
   border-radius: 0px 4px 4px 0px;
+}
+
+.cf-table .cf-icon:hover {
+  color: #106fff;
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
+.cf-icon {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 18px;
+  color: inherit;
+}
+
+.cf-icon:before {
+  content: "";
+  display: block;
+  width: 37px;
+  height: 48px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.cf-app .icon-pdf:before {
+  background-image: url("./images/PDF.svg");
+}
+
+.cf-app .icon-docx:before {
+  background-image: url("./images/Doc.svg");
+}
+
+.cf-app .icon-xlsx:before {
+  background-image: url("./images/XLS.svg");
+}
+
+.cf-app .icon-pptx:before {
+  background-image: url("./images/PPT.svg");
+}
+
+.cf-app .icon-mp4:before {
+  background-image: url("./images/Mp4.svg");
+}
+
+.cf-app .icon-other:before {
+  background-image: url("./images/Other.svg");
+}
+
+.cf-app .icon-wav:before {
+  background-image: url("./images/Wav.svg");
+}
+
+.cf-app .icon-jpg:before {
+  background-image: url("./images/JPG.svg");
+}
+
+.cf-app .icon-zip:before {
+  background-image: url("./images/Zip.svg");
+}
+
+.cf-app .icon-zip:before {
+  background-image: url("./images/Zip.svg");
 }

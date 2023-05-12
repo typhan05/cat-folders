@@ -5,6 +5,12 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       type="text/css"
@@ -13,7 +19,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="app">
+    <div id="app" class="cf-app">
       <div class="container">
         <h2 class="cf-title">
           <img src="/images/icon-folders.svg" alt="ico-folders" />CatFolders
@@ -21,11 +27,11 @@
         <table id="tableCatFolders" class="cf-table">
           <thead>
             <tr>
-              <th>Title</th>
-              <th>Type</th>
-              <th>Size</th>
-              <th>Updated</th>
-              <th>Link</th>
+              <th><span>Title</span></th>
+              <th><span>Type</span></th>
+              <th><span>Size</span></th>
+              <th><span>Updated</span></th>
+              <th><span>Link</span></th>
             </tr>
           </thead>
         </table>
