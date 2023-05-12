@@ -235,7 +235,7 @@ html.cf-html {
   height: 1.125rem;
   background-repeat: no-repeat;
   background-size: contain;
-  background-image: url("./images/icon-search.svg");
+  background-image: url("/images/icon-search.svg");
 }
 .cf-table__top .dataTables_filter input {
   height: 3rem;
@@ -338,7 +338,7 @@ table.cf-table th.sorting span {
 
 table.cf-table th.sorting span::after {
   content: "";
-  background-image: url("./images/icon-sort.svg");
+  background-image: url("/images/icon-sort.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -347,11 +347,11 @@ table.cf-table th.sorting span::after {
 }
 
 table.cf-table th.sorting_asc span::after {
-  background-image: url("./images/icon-sort-up.svg");
+  background-image: url("/images/icon-sort-up.svg");
 }
 
 table.cf-table th.sorting_desc span::after {
-  background-image: url("./images/icon-sort-down.svg");
+  background-image: url("/images/icon-sort-down.svg");
 }
 
 table.cf-table th span {
@@ -669,41 +669,41 @@ table.cf-table-grid .cf-updated {
 }
 
 .cf-app .icon-pdf:before {
-  background-image: url("./images/PDF.svg");
+  background-image: url("/images/PDF.svg");
 }
 
 .cf-app .icon-docx:before {
-  background-image: url("./images/Doc.svg");
+  background-image: url("/images/Doc.svg");
 }
 
 .cf-app .icon-xlsx:before {
-  background-image: url("./images/XLS.svg");
+  background-image: url("/images/XLS.svg");
 }
 
 .cf-app .icon-pptx:before {
-  background-image: url("./images/PPT.svg");
+  background-image: url("/images/PPT.svg");
 }
 
 .cf-app .icon-mp4:before {
-  background-image: url("./images/Mp4.svg");
+  background-image: url("/images/Mp4.svg");
 }
 
 .cf-app .icon-other:before {
-  background-image: url("./images/Other.svg");
+  background-image: url("/images/Other.svg");
 }
 
 .cf-app .icon-wav:before {
-  background-image: url("./images/Wav.svg");
+  background-image: url("/images/Wav.svg");
 }
 
 .cf-app .icon-jpg:before {
-  background-image: url("./images/JPG.svg");
+  background-image: url("/images/JPG.svg");
 }
 
 .cf-app .icon-zip:before {
-  background-image: url("./images/Zip.svg");
+  background-image: url("/images/Zip.svg");
 }
 
 .cf-app .icon-zip:before {
-  background-image: url("./images/Zip.svg");
+  background-image: url("/images/Zip.svg");
 }
