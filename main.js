@@ -28,7 +28,7 @@
       "</defs>" +
       "</svg>";
 
-    $("#tableCatFolders").DataTable({
+    var table = $("#tableCatFolders").DataTable({
       data: files,
       columnDefs: [{ orderable: false, targets: [4] }],
       columns: [
@@ -36,13 +36,13 @@
           data: "title",
           render: function (data, type, row) {
             return (
-              "<a href='" +
+              "<div class='flex'><a href='" +
               row.url +
               "' class='cf-icon icon-" +
               row.type +
               "'>" +
               row.title +
-              "</a>"
+              "</a></div>"
             );
           },
         },
@@ -82,9 +82,10 @@
       },
       pageLength: 10,
       autoWidth: false,
-
-      sDom: '<"cf-table__top"f <"cf-options" <"cf-options__list"> <"cf-options__grid">>>rt<"cf-table__bottom" lip>',
+      responsive: true,
+      sDom: '<"cf-table__top"f <"cf-options_info"l <"cf-options" <"cf-options__list"> <"cf-options__grid">>>><"cf-table__main"rt><"cf-table__bottom" lip>',
     });
+
     //add icon controls
     $(".cf-options__list").append(svgList).addClass("active");
     $(".cf-options__grid").append(svgGrid);
