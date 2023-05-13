@@ -28,63 +28,74 @@
       "</defs>" +
       "</svg>";
 
-    var table = $("#tableCatFolders").DataTable({
-      data: files,
-      columnDefs: [{ orderable: false, targets: [4] }],
-      columns: [
-        {
-          data: "title",
-          render: function (data, type, row) {
-            return (
-              "<div class='flex'><a href='" +
-              row.url +
-              "' class='cf-icon icon-" +
-              row.type +
-              "'>" +
-              row.title +
-              "</a></div>"
-            );
+    var table = $("#tableCatFolders")
+      .DataTable({
+        data: files,
+        columnDefs: [{ orderable: false, targets: [4] }],
+        columns: [
+          {
+            data: "title",
+            render: function (data, type, row) {
+              return (
+                "<div class='flex'><a href='" +
+                row.url +
+                "' class='cf-icon icon-" +
+                row.type +
+                "'>" +
+                row.title +
+                "</a></div>"
+              );
+            },
+          },
+          { data: "type" },
+          { data: "size" },
+          { data: "modified" },
+          {
+            data: "link",
+            render: function (data, type, row) {
+              return (
+                "<span class='cf-updated'><small>Updated</small>" +
+                row.modified +
+                "</span>" +
+                '<a href="' +
+                row.link +
+                '" class="btn-download">' +
+                svgDownload +
+                " Download</a>"
+              );
+            },
+          },
+        ],
+        language: {
+          searchPlaceholder: "Search by title...",
+          lengthMenu: "Items per page _MENU_",
+          info: "_START_ - _END_ of _TOTAL_",
+          paginate: {
+            next:
+              '<svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+              '<path d="M1 1.5L6 7L1 12.5" stroke="currentColor" stroke-width="1.5"/>' +
+              "</svg>",
+            previous:
+              '<svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+              '<path d="M7 1.5L2 7L7 12.5" stroke="currentColor" stroke-width="1.5"/>' +
+              "</svg>",
           },
         },
-        { data: "type" },
-        { data: "size" },
-        { data: "modified" },
-        {
-          data: "link",
-          render: function (data, type, row) {
-            return (
-              "<span class='cf-updated'><small>Updated</small>" +
-              row.modified +
-              "</span>" +
-              '<a href="' +
-              row.link +
-              '" class="btn-download">' +
-              svgDownload +
-              " Download</a>"
-            );
-          },
-        },
-      ],
-      language: {
-        searchPlaceholder: "Search by title...",
-        lengthMenu: "Items per page _MENU_",
-        info: "_START_ - _END_ of _TOTAL_",
-        paginate: {
-          next:
-            '<svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">' +
-            '<path d="M1 1.5L6 7L1 12.5" stroke="currentColor" stroke-width="1.5"/>' +
-            "</svg>",
-          previous:
-            '<svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">' +
-            '<path d="M7 1.5L2 7L7 12.5" stroke="currentColor" stroke-width="1.5"/>' +
-            "</svg>",
-        },
-      },
-      pageLength: 10,
-      autoWidth: false,
-      responsive: true,
-      sDom: '<"cf-table__top"f <"cf-options_info"l <"cf-options" <"cf-options__list"> <"cf-options__grid">>>><"cf-table__main"rt><"cf-table__bottom" lip>',
-    });
+        pageLength: 10,
+        autoWidth: false,
+        responsive: true,
+        sDom: '<"cf-table__top"f <"cf-options_info"l <"cf-options" <"cf-options__list"> <"cf-options__grid">>>><"cf-table__main"rt><"cf-table__bottom" lip>',
+      })
+      .on("search.dt", function () {
+        var info = table.page.info().pages;
+        if (info === 0) {
+          $(".cf-table").addClass("cf-empty-data");
+        } else {
+          $(".cf-table").removeClass("cf-empty-data");
+        }
+      });
+
+    //check no data
 
     //add icon controls
     $(".cf-options__list").append(svgList).addClass("active");

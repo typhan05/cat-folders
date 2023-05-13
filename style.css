@@ -668,6 +668,29 @@ table.cf-table-grid .cf-updated {
   }
 }
 
+.cf-empty-data.cf-table tr:hover,
+.cf-empty-data.cf-table tr:hover td {
+  background-color: #ffffff;
+}
+
+.cf-empty-data.cf-table-grid tr {
+  grid-column: 1/ 5 span;
+  padding: 20px;
+  border: 0;
+}
+
+.cf-empty-data.cf-table tr td {
+  border-color: #f8f9fa !important;
+  text-align: center;
+}
+
+.cf-empty-data.cf-table-grid tr td {
+  padding-top: 0;
+  margin-top: 0;
+  border: 0 !important;
+  justify-content: center;
+}
+
 .cf-app .icon-pdf:before {
   background-image: url("/images/PDF.svg");
 }
