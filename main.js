@@ -28,7 +28,7 @@
       "</defs>" +
       "</svg>";
 
-    var table = $("#tableCatFolders")
+    var table = $("#cf-table")
       .DataTable({
         data: files,
         columnDefs: [{ orderable: false, targets: [4] }],
@@ -54,14 +54,14 @@
             data: "link",
             render: function (data, type, row) {
               return (
-                "<span class='cf-updated'><small>Updated</small>" +
+                "<div class='cf-column-last'><span class='cf-updated'><small>Updated</small>" +
                 row.modified +
                 "</span>" +
                 '<a href="' +
                 row.link +
                 '" class="btn-download">' +
                 svgDownload +
-                " Download</a>"
+                " Download</a></div>"
               );
             },
           },
@@ -89,9 +89,9 @@
       .on("search.dt", function () {
         var info = table.page.info().pages;
         if (info === 0) {
-          $(".cf-table").addClass("cf-empty-data");
+          $("#cf-table").addClass("cf-empty-data");
         } else {
-          $(".cf-table").removeClass("cf-empty-data");
+          $("#cf-table").removeClass("cf-empty-data");
         }
       });
 
@@ -128,6 +128,150 @@
 
   $(document).ready(function () {
     var files = [
+      {
+        title: "Agreement Purchase",
+        type: "pdf",
+        size: "108 KB",
+        url: "https://media-folder.ninjateam.org/wp-content/uploads/2023/04/Agreement-Purchase.pdf",
+        link: "https://media-folder.ninjateam.org/wp-content/uploads/2023/04/Agreement-Purchase.pdf",
+        alt: "",
+        modified: "Apr 19, 2023",
+      },
+      {
+        title: "Document Library",
+        type: "pptx",
+        size: "27 KB",
+        url: "https://media-folder.ninjateam.org/wp-content/uploads/2023/04/Document-Library.pdf",
+        link: "https://media-folder.ninjateam.org/wp-content/uploads/2023/04/Document-Library.pdf",
+        alt: "",
+        modified: "Apr 19, 2023",
+      },
+      {
+        title: "Financial",
+        type: "wav",
+        size: "81 KB",
+        url: "https://media-folder.ninjateam.org/wp-content/uploads/2023/04/Financial.xlsx",
+        link: "https://media-folder.ninjateam.org/wp-content/uploads/2023/04/Financial.xlsx",
+        alt: "",
+        modified: "Apr 19, 2023",
+      },
+      {
+        title: "General Information",
+        type: "docx",
+        size: "109 KB",
+        url: "https://media-folder.ninjateam.org/wp-content/uploads/2023/04/General-Information.docx",
+        link: "https://media-folder.ninjateam.org/wp-content/uploads/2023/04/General-Information.docx",
+        alt: "",
+        modified: "Apr 19, 2023",
+      },
+      {
+        title: "Impact Moderato",
+        type: "mp4",
+        size: "746 KB",
+        url: "https://media-folder.ninjateam.org/wp-content/uploads/2023/04/Sound.mp3",
+        link: "https://media-folder.ninjateam.org/wp-content/uploads/2023/04/Sound.mp3",
+        alt: "",
+        modified: "Apr 19, 2023",
+      },
+      {
+        title: "Logo",
+        type: "jpg",
+        size: "17 KB",
+        url: "https://media-folder.ninjateam.org/wp-content/uploads/2023/04/Logo.png",
+        link: "https://media-folder.ninjateam.org/wp-content/uploads/2023/04/Logo.png",
+        alt: "",
+        modified: "Apr 19, 2023",
+      },
+      {
+        title: "Outline",
+        type: "pdf",
+        size: "27 KB",
+        url: "https://media-folder.ninjateam.org/wp-content/uploads/2023/04/Outline.pdf",
+        link: "https://media-folder.ninjateam.org/wp-content/uploads/2023/04/Outline.pdf",
+        alt: "",
+        modified: "Apr 19, 2023",
+      },
+      {
+        title: "Video Tutorial",
+        type: "mp4",
+        size: "1 MB",
+        url: "https://media-folder.ninjateam.org/wp-content/uploads/2023/04/Video-Tutorial.mp4",
+        link: "https://media-folder.ninjateam.org/wp-content/uploads/2023/04/Video-Tutorial.mp4",
+        alt: "",
+        modified: "Apr 19, 2023",
+      },
+      {
+        title: "Greement Purchase",
+        type: "zip",
+        size: "108 KB",
+        url: "https://media-folder.ninjateam.org/wp-content/uploads/2023/04/Agreement-Purchase.pdf",
+        link: "https://media-folder.ninjateam.org/wp-content/uploads/2023/04/Agreement-Purchase.pdf",
+        alt: "",
+        modified: "Apr 19, 2023",
+      },
+      {
+        title: "Ocument Library",
+        type: "other",
+        size: "27 KB",
+        url: "https://media-folder.ninjateam.org/wp-content/uploads/2023/04/Document-Library.pdf",
+        link: "https://media-folder.ninjateam.org/wp-content/uploads/2023/04/Document-Library.pdf",
+        alt: "",
+        modified: "Apr 19, 2023",
+      },
+      {
+        title: "Inancial",
+        type: "xlsx",
+        size: "81 KB",
+        url: "https://media-folder.ninjateam.org/wp-content/uploads/2023/04/Financial.xlsx",
+        link: "https://media-folder.ninjateam.org/wp-content/uploads/2023/04/Financial.xlsx",
+        alt: "",
+        modified: "Apr 19, 2023",
+      },
+      {
+        title: "Reneral Information",
+        type: "docx",
+        size: "109 KB",
+        url: "https://media-folder.ninjateam.org/wp-content/uploads/2023/04/General-Information.docx",
+        link: "https://media-folder.ninjateam.org/wp-content/uploads/2023/04/General-Information.docx",
+        alt: "",
+        modified: "Apr 19, 2023",
+      },
+      {
+        title: "Rc Impact Moderato",
+        type: "mp4",
+        size: "746 KB",
+        url: "https://media-folder.ninjateam.org/wp-content/uploads/2023/04/Sound.mp3",
+        link: "https://media-folder.ninjateam.org/wp-content/uploads/2023/04/Sound.mp3",
+        alt: "",
+        modified: "Apr 19, 2023",
+      },
+      {
+        title: "Reverse Logo",
+        type: "jpg",
+        size: "17 KB",
+        url: "https://media-folder.ninjateam.org/wp-content/uploads/2023/04/Logo.png",
+        link: "https://media-folder.ninjateam.org/wp-content/uploads/2023/04/Logo.png",
+        alt: "",
+        modified: "Apr 19, 2023",
+      },
+      {
+        title: "Outline",
+        type: "other",
+        size: "27 KB",
+        url: "https://media-folder.ninjateam.org/wp-content/uploads/2023/04/Outline.pdf",
+        link: "https://media-folder.ninjateam.org/wp-content/uploads/2023/04/Outline.pdf",
+        alt: "",
+        modified: "Apr 19, 2023",
+      },
+      {
+        title: "Video Tutorial",
+        type: "mp4",
+        size: "1 MB",
+        url: "https://media-folder.ninjateam.org/wp-content/uploads/2023/04/Video-Tutorial.mp4",
+        link: "https://media-folder.ninjateam.org/wp-content/uploads/2023/04/Video-Tutorial.mp4",
+        alt: "",
+        modified: "Apr 19, 2023",
+      },
       {
         title: "Agreement Purchase",
         type: "pdf",
