@@ -154,7 +154,7 @@ svg {
   font-weight: 500;
   border-radius: 0.5rem;
   color: #212529;
-  padding: 0.75rem 1.125rem;
+  padding: 0.5rem 1rem;
   column-gap: 0.625rem;
   min-width: max-content;
 }
@@ -499,8 +499,8 @@ svg {
 
 @media screen and (min-width: 768px) {
   #cf-app table.cf-table-grid .cf-icon::before {
-    width: 5.3125rem;
-    height: 6.875rem;
+    width: 4.625rem;
+    height: 6.25rem;
   }
 }
 
