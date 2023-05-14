@@ -82,7 +82,7 @@ svg {
 
 @media screen and (min-width: 768px) {
   #cf-app {
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
 }
 
@@ -156,7 +156,6 @@ svg {
   color: #212529;
   padding: 0.75rem 1.125rem;
   column-gap: 0.625rem;
-  transition-duration: 0.3s;
   min-width: max-content;
 }
 
@@ -385,7 +384,7 @@ svg {
     width: 50%;
   }
   #cf-app table.cf-table th:last-child {
-    width: 12%;
+    width: 10%;
   }
 }
 
@@ -434,17 +433,13 @@ svg {
 }
 
 @media screen and (min-width: 768px) {
-  #cf-app table.cf-table thead th,
-  #cf-app table.cf-table tbody td {
-    padding: 1.25rem;
-  }
   #cf-app table.cf-table tbody tr.prev-hover td,
   #cf-app table.cf-table tbody tr:hover td {
     border-color: transparent;
   }
 
   #cf-app table.cf-table tbody tr:hover td {
-    background-color: #f4f7ff;
+    background-color: #fbfbfb;
   }
 
   #cf-app table.cf-table tr:hover td:first-child {
@@ -563,15 +558,14 @@ svg {
 
 @media screen and (min-width: 768px) {
   #cf-app table.cf-table-grid .cf-column-last {
-    font-size: 1.125rem;
     flex-direction: column;
   }
   #cf-app table.cf-table-grid tr:hover {
-    background-color: #f4f7ff;
+    background-color: #fbfbfb;
   }
 
   #cf-app table.cf-table-grid tr:hover .cf-column-last {
-    border-color: #ffffff;
+    border-color: #ecf0f4;
   }
 }
 
@@ -743,7 +737,7 @@ svg {
 }
 
 #cf-app .cf-table .cf-icon:hover {
-  color: #106fff;
+  color: #2271b1;
   text-decoration: underline;
   text-underline-position: under;
 }
