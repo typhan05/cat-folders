@@ -344,7 +344,7 @@ svg {
 
 #cf-app table.cf-table-grid.collapsed .dtr-control .cf-icon {
   pointer-events: auto;
-  margin-left: 1.5625rem;
+  margin-left: 0;
 }
 
 #cf-app table.cf-table-grid.collapsed tbody tr.child,
